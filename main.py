@@ -21,7 +21,7 @@ for a in r:
 class Client(dc.Client):
     prefix = 'xa!'
     conversation = False
-    
+
     async def on_ready(self):
         """Quando o bot estiver 'pronto'."""
         print(f'{str(self.user)} connected.')
@@ -41,6 +41,8 @@ class Client(dc.Client):
             self.conversation = False
         elif msg.content.startswith(f'{self.prefix}conversar') and not self.conversation: # se o comando é para começar a conversa
             self.conversation = True
+            await msg.channel.send('começou...')
+            await msg.channel.send(chatbot.get_response('a'))
         elif msg.content.startswith(f'{self.prefix}random send'): # se o comando é para mandar um arquivo aleatório
             with open(random.choice(randomImages), 'rb') as file:
                 await msg.channel.send(file=dc.File(file))
