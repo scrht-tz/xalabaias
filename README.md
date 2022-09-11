@@ -39,7 +39,7 @@ O Xalabaias envia uma foto **ALEATÓRIA** para o usuário no mesmo canal de text
 
 fp = random.choice(randomImages) # escolhe aleatoriamente o caminho de uma imagem/vídeo
 with open(fp, 'rb') as file: # abre esse caminho e lê em binário
-                await msg.channel.send(file=dc.File(file)) # envia o arquivo
+    await msg.channel.send(file=dc.File(file)) # envia o arquivo
 ```
 
 ##### add [file]:
@@ -48,9 +48,9 @@ Esse comando é usado para adicionar ao banco de imagens do Xalabaias para ser e
 
 ```apache
 for attach in msg.attachments: # cada anexo da mensagem
-                    if attach.content_type and attach.content_type.split('/')[0] in ['image', 'video']: # se o anexo é imagem ou vídeo:
-                        attach.save(os.path.join(dirassets, f'random/{attach.filename}')) # salva o anexo na pasta de assets
-                await msg.channel.send('Os arquivos foram salvos.')
+    if attach.content_type and attach.content_type.split('/')[0] in ['image', 'video']: # se o anexo é imagem ou vídeo:
+        attach.save(os.path.join(dirassets, f'random/{attach.filename}')) # salva o anexo na pasta de assets
+await msg.channel.send('Os arquivos foram salvos.')
 ```
 
 O usuário, junto ao comando, deve anexar um ou mais arquivos (vídeo ou imagem).
