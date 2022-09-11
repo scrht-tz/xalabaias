@@ -1,0 +1,7 @@
+chatterbot
+chatterbot_corpus
+spacy
+os
+asyncio
+random
+discord

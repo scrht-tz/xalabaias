@@ -3,14 +3,9 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
 from spacy.cli import download
 
-import logging
-
 #download('en_core_web_sm')
 class ENGSM:
     ISO_639_1 = 'en_core_web_sm'
-
-logging.basicConfig(level=logging.INFO)
-
 
 chatbot = ChatBot('chatbot', tagger_language=ENGSM)
 
