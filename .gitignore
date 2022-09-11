@@ -1,2 +1,4 @@
 .gitignore
-key.py
+tokenbot.py
+key.json
+venv
